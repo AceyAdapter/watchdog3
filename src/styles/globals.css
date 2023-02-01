@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   background-color: #080a19;
   color: white;
@@ -5,15 +9,20 @@ html {
 
 .wallet-button {
   background-color: #2dd8a7;
-  border-radius: 0;
+  color: black;
   border: 0;
   cursor: default;
+}
+
+:where(.css-dev-only-do-not-override-ixblex).ant-btn-default:not(:disabled):hover {
+  color: white;
+  cursor: pointer;
+}
+
+.wallet-button:active {
+  color: white;
 }
 
 .wallet-connect-button {
   background-color: #2dd8a7;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
