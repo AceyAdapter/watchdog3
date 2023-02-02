@@ -3,24 +3,23 @@
 @tailwind utilities;
 
 html {
-  background-color: #080a19;
-  color: white;
+  background: linear-gradient(130.24deg, rgba(109, 109, 109, 0.4) 8.83%, rgba(175, 174, 174, 0.12) 100%), #000000;
+  color: #ECEEED;
 }
 
 .wallet-button {
   background-color: #2dd8a7;
   color: black;
+  font-weight: bold;
   border: 0;
   cursor: default;
+  border-radius: 50em;
 }
 
 :where(.css-dev-only-do-not-override-ixblex).ant-btn-default:not(:disabled):hover {
-  color: white;
+  color: black;
+  background-color:#2dd8a7E6;
   cursor: pointer;
-}
-
-.wallet-button:active {
-  color: white;
 }
 
 .wallet-connect-button {

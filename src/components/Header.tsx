@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import baptswap_banner from "../../public/baptswap_banner.svg";
 
 import Image from "next/image";
@@ -6,8 +6,12 @@ import Link from "next/link";
 
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
+import ThemeButton from "./buttons/ThemeButton";
+import OtherMenuButton from "./buttons/OtherMenuButton";
 
 const Header = () => {
+  const [isLightMode, setIsLightMode] = useState<boolean>(false);
+
   const {
     connect,
     account,
@@ -26,7 +30,7 @@ const Header = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="fixed top-0 w-full h-20 border-b border-b-[#162235] bg-[#0e111d] flex flex-row justify-between items-center px-2">
+    <div className="fixed top-0 w-full border-b border-b-transparent flex flex-row justify-between items-center p-5 px-6">
       <div className="flex flex-row items-center">
         <Link href="/">
           <Image src={baptswap_banner} alt="BaptSwap Logo" className="w-40" />
@@ -49,8 +53,10 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <div className="h-fit">
+      <div className="h-fit flex flex-row justify-between w-auto space-x-4 h-full">
+        <ThemeButton />
         <WalletSelector />
+        <OtherMenuButton />
       </div>
     </div>
   );

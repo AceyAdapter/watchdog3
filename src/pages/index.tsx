@@ -7,7 +7,9 @@ export default function Home() {
         <title>BaptSwap | Home</title>
       </Head>
       <main>
-        <div className="text-blue-500 text-2xl font-bold underline">Hello</div>
+        <a href="swap" className="text-blue-500 text-2xl font-bold underline">
+          Hello
+        </a>
       </main>
     </>
   );
