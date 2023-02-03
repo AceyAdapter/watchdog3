@@ -30,7 +30,7 @@ const Header = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="fixed top-0 w-full border-b border-b-transparent flex flex-row justify-between items-center p-5 px-6">
+    <div className="fixed top-0 w-full h-25 border-b border-b-transparent flex flex-row justify-between items-center p-5 px-6">
       <div className="flex flex-row items-center">
         <Link href="/">
           <Image src={baptswap_banner} alt="BaptSwap Logo" className="w-40" />
