@@ -10,8 +10,6 @@ import ThemeButton from "./buttons/ThemeButton";
 import OtherMenuButton from "./buttons/OtherMenuButton";
 
 const Header = () => {
-  const [isLightMode, setIsLightMode] = useState<boolean>(false);
-
   const {
     connect,
     account,

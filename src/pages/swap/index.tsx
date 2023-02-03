@@ -29,7 +29,6 @@ export default function Swap() {
               </div>
             }
           />
-          {/* <div className="text-blue-500 text-2xl font-bold underline">Swap</div> */}
         </div>
       </main>
     </>

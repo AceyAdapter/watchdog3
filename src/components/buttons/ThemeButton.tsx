@@ -4,7 +4,6 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const ThemeButton = () => {
   const [isLightMode, setIsLightMode] = useState<boolean>(false);
-  // Check if wallet is connected. If so, connect.
   useEffect(() => {}, []);
 
   return (

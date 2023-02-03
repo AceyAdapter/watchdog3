@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+
+// General card which takes in title and content and applies a bg color
 
 export type SimpleCardProps = {
   title: string;
@@ -8,7 +8,6 @@ export type SimpleCardProps = {
 };
 
 const SimpleCard: React.FC<SimpleCardProps> = ({ title, content }) => {
-  // Check if wallet is connected. If so, connect.
   useEffect(() => {}, []);
 
   return (

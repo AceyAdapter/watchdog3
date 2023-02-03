@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 const OtherMenuButton = () => {
-  // Check if wallet is connected. If so, connect.
   useEffect(() => {}, []);
 
   return (
