@@ -63,9 +63,18 @@ export default function Swap() {
                   placeholder="0.0"
                   className="bg-off_gray transition ease-in-out w-full rounded-xl h-auto p-5"
                 />
-                <button className="font-bold btn bg-bapt_green rounded-xl h-auto p-3 text-black">
-                  Connect Wallet
-                </button>
+                {connected ? (
+                  <button
+                    onClick={onSignAndSubmitTransaction}
+                    className="font-bold btn bg-bapt_green rounded-xl h-auto p-3 text-black"
+                  >
+                    Test Tx
+                  </button>
+                ) : (
+                  <button className="font-bold btn bg-bapt_green/50 rounded-xl h-auto p-3 text-black">
+                    Connect Wallet
+                  </button>
+                )}
               </div>
             }
           />
