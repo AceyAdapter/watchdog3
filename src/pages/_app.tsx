@@ -12,16 +12,16 @@ export default function App({ Component, pageProps }: AppProps) {
   const wallets = [new PetraWallet()];
 
   return (
-    <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
+    <div>
       <Head>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/baptswap_icon_positive.svg" />
+        <link rel="icon" href="/watchdog_icon.svg" />
       </Head>
-      <div className="relative top-20">
+      <div className="min-h-screen">
         <Header />
         <Component {...pageProps} />
       </div>
-    </AptosWalletAdapterProvider>
+    </div>
   );
 }
