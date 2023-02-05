@@ -71,7 +71,8 @@ export default function Home() {
                 <span className="font-bold">Total Transactions: </span>
                 {walletTxs?.length.toLocaleString()}
               </div>
-              <div className="w-fit mt-10">
+              <div className="w-fit mt-6">
+                <div className="text-lg font-bold">Wallet Network</div>
                 <WalletTable
                   walletTxs={walletTxs}
                   walletAddress={walletAddress}
@@ -93,7 +94,7 @@ export default function Home() {
               </div>
             </div>
           ) : (
-            <div className="w-1/3 mt-40">
+            <div className="w-1/2 mt-40">
               <div className="text-xl font-semibold">Wallet Scanner</div>
               <div className="w-full flex flex-row">
                 <input
@@ -107,9 +108,9 @@ export default function Home() {
                   onClick={() => {
                     lookupWallet(walletAddress);
                   }}
-                  className="font-semibold mx-6 bg-white hover:bg-white/90 hover:cursor-pointer text-[#191970] text-lg px-5 py-2 rounded-xl"
+                  className="w-60 text-center font-semibold mx-6 bg-white hover:bg-white/90 hover:cursor-pointer text-[#191970] px-5 py-2 rounded-xl"
                 >
-                  Scan
+                  Generate Report
                 </div>
               </div>
             </div>

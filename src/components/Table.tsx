@@ -133,6 +133,7 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
   const [walletMap, setWalletMap] = useState<IHash>({});
   const [walletList, setWalletList] = useState<any[]>([]);
   const [renderable, setRenderable] = useState(false);
+  const [tableData, setTableData] = useState<any[]>([]);
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -159,9 +160,10 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
     let totalIncoming = 0;
     let totalOutgoing = 0;
 
-    walletTxs.map((tx: txType) => {
-      let walletHash: IHash = walletMap;
+    let inHash: IHash = {};
+    let outHash: IHash = {};
 
+    walletTxs.map((tx: txType) => {
       // Parse txs
       if (tx.from.toLowerCase() != walletAddress.toLowerCase()) {
         totalIncoming += 1;
@@ -170,10 +172,10 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
           tx.from = "0x0000000000000000000000000000000000000000";
         }
 
-        if (walletHash[tx.from]) {
-          walletHash[tx.from] += 1;
+        if (inHash[tx.from]) {
+          inHash[tx.from] += 1;
         } else {
-          walletHash[tx.from] = 1;
+          inHash[tx.from] = 1;
         }
 
         !walletList.includes(tx.from) && walletList.push(tx.from);
@@ -184,18 +186,27 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
           tx.to = "0x0000000000000000000000000000000000000000";
         }
 
-        if (walletHash[tx.to]) {
-          walletHash[tx.to] += 1;
+        if (outHash[tx.to]) {
+          outHash[tx.to] += 1;
         } else {
-          walletHash[tx.to] = 1;
+          outHash[tx.to] = 1;
         }
 
         !walletList.includes(tx.to) && walletList.push(tx.to);
       }
-
-      setWalletList(walletList);
-      setWalletMap(walletHash);
     });
+
+    let data: any[] = [];
+
+    walletList.map((wallet) => {
+      data.push({
+        address: wallet,
+        incoming_txs: inHash[wallet] ?? 0,
+        outgoing_txs: outHash[wallet] ?? 0,
+      });
+    });
+
+    setTableData(data.sort((a, b) => b.outgoing_txs - a.outgoing_txs));
 
     console.log(walletMap);
     console.log(walletList);
@@ -213,26 +224,30 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
           <TableHead>
             <TableRow>
               <StyledTableCell>Address</StyledTableCell>
-              <StyledTableCell>Interactions</StyledTableCell>
+              <StyledTableCell>Received From</StyledTableCell>
+              <StyledTableCell>Sent To</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
-              ? walletList.slice(
+              ? tableData.slice(
                   page * rowsPerPage,
                   page * rowsPerPage + rowsPerPage
                 )
-              : walletList
+              : tableData
             ).map((row) => (
               <StyledTableRow
-                key={row}
+                key={row.address}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <StyledTableCell component="th" scope="row">
-                  {row}
+                  {row.address}
                 </StyledTableCell>
                 <StyledTableCell align="right">
-                  {walletMap[row]}
+                  {row.incoming_txs}
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.outgoing_txs}
                 </StyledTableCell>
               </StyledTableRow>
             ))}
