@@ -132,8 +132,8 @@ export default function Home() {
               Wallet Scanner
             </h1>
             <p className="text-xl mt-4 w-full text-center">
-              Lookup an address to gain insights on it's trustworthiness based
-              on on-chain data and our crowd-sourced database of known scammers.
+              Lookup an address to gain insights on its trustworthiness based on
+              on-chain data and our crowd-sourced database of known scammers.
             </p>
             <div className="w-full flex flex-row mt-5">
               <input

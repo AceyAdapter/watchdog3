@@ -215,7 +215,7 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
 
     // console.log(totalIncoming);
     // console.log(totalOutgoing);
-  }, [walletTxs]);
+  }, [walletTxs, walletList, walletAddress, walletMap]);
 
   return (
     <div className="flex flex-col">
