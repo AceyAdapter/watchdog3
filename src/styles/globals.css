@@ -4,8 +4,8 @@
 
 html {
   height: auto;
-  background: linear-gradient(130.24deg, rgba(86, 86, 86, 0.4) 8.83%, rgba(134, 134, 134, 0.12) 100%), #000000;
-  color: #d1e4f4;
+  background: linear-gradient(130.24deg, rgba(157, 159, 191, 0.4) 8.83%, rgba(25, 25, 112) 100%), 	rgb(25, 25, 112);
+  color: #fff;
 }
 
 main {
