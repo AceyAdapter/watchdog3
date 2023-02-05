@@ -18,7 +18,7 @@ export default function Home() {
     "0xab3c368a1C3655F782513fe73f08E37349B8F9eE"
   );
   const [walletBalance, setWalletBalance] = useState(0);
-  const [walletTxs, setWalletTxs] = useState([]);
+  const [walletTxs, setWalletTxs] = useState<any[]>([]);
   const [resultsLoaded, setResultsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
