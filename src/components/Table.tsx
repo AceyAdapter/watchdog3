@@ -124,9 +124,14 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
+export type txType = {
+  to: string;
+  from: string;
+};
+
 const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
   const [walletMap, setWalletMap] = useState({});
-  const [walletList, setWalletList] = useState([]);
+  const [walletList, setWalletList] = useState<any[]>([]);
   const [renderable, setRenderable] = useState(false);
 
   const [page, setPage] = React.useState(0);
@@ -154,7 +159,7 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
     let totalIncoming = 0;
     let totalOutgoing = 0;
 
-    walletTxs.map((tx) => {
+    walletTxs.map((tx: txType) => {
       let walletHash: IHash = walletMap;
 
       // Parse txs
