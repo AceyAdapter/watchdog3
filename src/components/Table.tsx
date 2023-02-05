@@ -130,7 +130,7 @@ export type txType = {
 };
 
 const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
-  const [walletMap, setWalletMap] = useState({});
+  const [walletMap, setWalletMap] = useState<IHash>({});
   const [walletList, setWalletList] = useState<any[]>([]);
   const [renderable, setRenderable] = useState(false);
 
