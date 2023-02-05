@@ -19,7 +19,7 @@ const Header = () => {
         <div className="flex flex-row items-center">
           <Link href="/verify">
             <div className="mx-4 hover:bg-[#191970]/30 p-2 hover:rounded-2xl hover:cursor-pointer">
-              KYC
+              Watchdog ID
             </div>
           </Link>
           <Link href="/report">

@@ -243,10 +243,10 @@ const WalletTable: React.FC<TableProps> = ({ walletTxs, walletAddress }) => {
                 <StyledTableCell component="th" scope="row">
                   {row.address}
                 </StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell align="center">
                   {row.incoming_txs}
                 </StyledTableCell>
-                <StyledTableCell align="right">
+                <StyledTableCell align="center">
                   {row.outgoing_txs}
                 </StyledTableCell>
               </StyledTableRow>
