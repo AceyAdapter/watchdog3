@@ -1,4 +1,4 @@
-# BaptSwap Next.js App
+# Next.js App
 
 ## Getting Started
 - Clone this repo
